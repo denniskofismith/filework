@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabs</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/try.css') }}">
+</head>
+
+<body>
+  <section class="section">
+    <div class="title">
+      <h2>ROOM OCCUPANCY MONITORING SYSTEM</h2>
+    </div>
+
+    <div class="about-center section-center">
+      <article class="about-img">
+        <img src="{{ url_for('static', filename='images/ucc.jpg') }}" alt="Logo" />
+      </article>
+      <article class="about">
+        <!-- btn container -->
+        <div class="btn-container">
+          <button class="tab-btn active" data-id="available" id="available-tab">AVAILABLE</button>
+          <button class="tab-btn" data-id="occupied" id="occupied-tab">OCCUPIED</button>
+        </div>
+
+        <div class="about-content">
+          <!-- Available tab content -->
+          <div class="content active" id="available">
+            <div class="card">
+              <div class="card-header">
+                <h3>Classroom 1</h3>
+              </div>
+              <div class="card-body">
+                <img src="{{url_for('static', filename='image_path')}}" alt="classroom ">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non at modi, sint voluptatem...</p>
+              </div>
+              <time datetime="{{ timestamp }}">
+                <p>{{ timestamp }}</p>
+              </time>
+              <div class="card-footer">
+                <p>{{num_faces}}</p>
+                <p  id = "status" class="{{ 'available' if class_status == 'Class Available' else 'unavailable' }}">{{ class_status }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Occupied tab content -->
+          <div class="content" id="occupied"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- javascript -->
+  <script src="{{ url_for('static', filename='js/try.js') }}"></script>
+</body>
+
+</html>

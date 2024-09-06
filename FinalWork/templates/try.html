@@ -7,7 +7,23 @@
   <title>Tabs</title>
 
   <!-- styles -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/try.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='try.css') }}">
+
+  <link rel="stylesheet" href="../static/try.css">
+
+
+  <link href="../static/css/bootstrap.css " rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+  <!-- Custom CSS -->
+
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+
 </head>
 
 <body>
@@ -18,45 +34,116 @@
 
     <div class="about-center section-center">
       <article class="about-img">
-        <img src="{{ url_for('static', filename='images/ucc.jpg') }}" alt="Logo" />
+        <!-- <img src="{{ url_for('static', filename='images/ucc.jpg') }}" alt="Logo" /> -->
+        <img src="../static/images/ucc.jpg" alt="">
       </article>
       <article class="about">
         <!-- btn container -->
-        <div class="btn-container">
+        <!-- <div class="btn-container">
           <button class="tab-btn active" data-id="available" id="available-tab">AVAILABLE</button>
           <button class="tab-btn" data-id="occupied" id="occupied-tab">OCCUPIED</button>
-        </div>
+        </div> -->
 
         <div class="about-content">
           <!-- Available tab content -->
           <div class="content active" id="available">
-            <div class="card">
-              <div class="card-header">
-                <h3>Classroom 1</h3>
+            <div class="col-sm-4">
+              <div class="pricing text-center" id="card">
+                <div class="pricing-top-box">
+                  <h3 class="pricing-title">NLT</h3>
+                  <h4 class="price">LECTURE HALL 1</h4>
+                </div>
+                <ul>
+                  <li>{{occupancy_percentage}}</li>
+                  <li>{{class_size}}</li>
+                  <li>
+                  <li><time datetime="{{ timestamp }}">
+                      <p>{{ timestamp }}</p>
+                    </time>
+                  </li>
+                  </li>
+                </ul>
+                <a href="" class="btn btn-send">{{status}}</a>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="pricing text-center">
+                <div class="pricing-top-box">
+                  <h3 class="pricing-title">SWLT</h3>
+                  <h4 class="price">LECTURE HALL 10</h4>
+                </div>
+                <ul>
+                  <li>PERCENTAGE</li>
+                  <li>ROOM CAPACITY</li>
+                  <li>TIME </li>
+                  <!-- <li><time datetime="{{ timestamp }}">
+                    <p>{{ timestamp }}</p>
+                  </time>
+                </li> -->
+                </ul>
+                <a href="" class="btn btn-send">AVAILABLE</a>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="pricing text-center">
+                <div class="pricing-top-box">
+                  <h3 class="pricing-title">CELT</h3>
+                  <h4 class="price">LECTURE HALL 9</h4>
+                </div>
+                <ul>
+                  <li>PERCENTAGE</li>
+                  <li>ROOM CAPACITY</li>
+                  <li>TIME </li>
+                </ul>
+                <a href="" class="btn btn-send">AVAILABLE</a>
+              </div>
+            </div>
+            <!-- <div class="card">
+              <div class="card-header"> -->
+            <!-- <h3>Classroom 1</h3>
               </div>
               <div class="card-body">
-                <img src="{{url_for('static', filename='image_path')}}" alt="classroom ">
+
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non at modi, sint voluptatem...</p>
               </div>
               <time datetime="{{ timestamp }}">
                 <p>{{ timestamp }}</p>
               </time>
-              <div class="card-footer">
-                <p>{{num_faces}}</p>
-                <p  id = "status" class="{{ 'available' if class_status == 'Class Available' else 'unavailable' }}">{{ class_status }}</p>
-              </div>
-            </div>
+              <div class="card-footer"> -->
+            <!-- <p>{{num_faces}}</p>
+                <p id="status" class="{{ 'available' if class_status == 'Class Available' else 'unavailable' }}">{{
+                  class_status }}</p> -->
+            <!-- <p id="status">Class Available</p>
+              </div> -->
           </div>
 
-          <!-- Occupied tab content -->
-          <div class="content" id="occupied"></div>
         </div>
-      </article>
+    </div>
+
+    <!-- Occupied tab content -->
+    <div class="content" id="occupied">
+      <div class="col-sm-4">
+        <div class="pricing text-center">
+          <div class="pricing-top-box">
+            <h3 class="pricing-title">NLT</h3>
+            <h4 class="price">LECTURE HALL 1</h4>
+          </div>
+          <ul>
+            <li>PERCENTAGE</li>
+            <li>ROOM CAPACITY</li>
+            <li>TIME </li>
+          </ul>
+          <a href="" class="btn btn-send">OCCUPIED</a>
+        </div>
+      </div>
+    </div>
+    </article>
     </div>
   </section>
 
   <!-- javascript -->
   <script src="{{ url_for('static', filename='js/try.js') }}"></script>
+  <script src="../static/js/try.js"></script>
 </body>
 
 </html>

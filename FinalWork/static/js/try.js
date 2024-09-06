@@ -3,7 +3,7 @@ const btns = document.querySelectorAll(".tab-btn");
 const holder = document.getElementById("holder")
 const availableTab = document.getElementById("available");
 const occupiedTab = document.getElementById("occupied");
-const card = document.querySelector(".card");
+const card = document.getElementById("card")
 const statusid = document.getElementById("status")
 
 // Handle tab switching

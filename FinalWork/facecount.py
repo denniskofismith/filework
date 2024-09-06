@@ -1,6 +1,6 @@
 
 import cv2
-import cv2
+
 
 def count_faces(image_path):
     # Load the image
@@ -12,7 +12,7 @@ def count_faces(image_path):
 
     faces = face_cascade.detectMultiScale(
     gray,
-    scaleFactor=1.03,  # Try 1.05 or 1.03 for more accurate detection
+    scaleFactor=1.05,  # Try 1.05 or 1.03 for more accurate detection
     minNeighbors=5,    # Increase this value to reduce false positives
     minSize=(30, 30)   # Adjust based on the expected face size
 )
@@ -27,6 +27,6 @@ def count_faces(image_path):
 if __name__ == "__main__":
     # Example usage
     # image_path = "/home/koddysmith/globalproject/RoomOccupancyMonitoringSystem/static/images/picture4.jpg"
-    image_path = "/home/koddysmith/globalproject/RoomOccupancyMonitoringSystem/static/images/koddy.jpg"
+    image_path = "./static/images/kwame.PNG"
     num_faces = count_faces(image_path)
     print(f"Number of faces detected: {num_faces}")

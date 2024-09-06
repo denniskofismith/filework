@@ -220,7 +220,8 @@ About
 .about-img img {
   border-radius: var(--radius);
   object-fit: cover;
-  height: 20rem;
+  height: 30rem;
+  display: block;
 }
 
 @media screen and (min-width: 992px) {
@@ -230,8 +231,8 @@ About
 
   .about-center {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 2rem;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
   }
 }
 
@@ -296,8 +297,14 @@ About
 
 /* card css */
 
+.flex-container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
 .card {
-  width: 90%;
+  width: 30%;
   height: 50%;
   background-color: #fff;
   border: 1px solid #ddd;

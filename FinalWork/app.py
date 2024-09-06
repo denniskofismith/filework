@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import sqlite3
-from facecount import count_faces
+# from facecount import count_faces
 import os
 
 app = Flask(__name__)
@@ -46,6 +46,8 @@ def determine_room_status(num_faces):
         return 'Class Unavailable'
     else:
         return 'Class Available'
+    
+    
 
 
 
@@ -63,7 +65,9 @@ def index():
 
         if status == 'Motion Detected' and image_path:
 
-            num_faces = count_faces(image_path)
+            # num_faces = count_faces(image_path)
+            
+            num_faces = 30
 
             print(num_faces)
             # num_faces = 10
@@ -72,11 +76,12 @@ def index():
             class_status = determine_room_status(num_faces)
         
         # timestamp = timestamp.strftime('%Y-%m-%d %H:%M:%S')
+        
+        occupancy_percentage = (num_faces / ROOM_CAPACITY) * 100
 
     
-    occupancy_percentage = (num_faces / ROOM_CAPACITY) * 100
     
-    return render_template('newindex.html',occupancy_percentage=occupancy_percentage, class_status=class_status, timestamp=timestamp,num_faces=num_faces)
+    return render_template('try.html',occupancy_percentage=occupancy_percentage,class_status=class_status, timestamp=timestamp,class_size=ROOM_CAPACITY)
 
  
 
